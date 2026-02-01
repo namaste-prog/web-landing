@@ -1,4 +1,46 @@
+import { useState } from 'react'
+
 const Footer = () => {
+  const [phoneNumber, setPhoneNumber] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState('')
+
+  const handlePhoneSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('')
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+          phone: phoneNumber,
+          subject: 'New Phone Number Submission - Footer',
+          message: `New phone number submission: ${phoneNumber}`
+        })
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        setSubmitStatus('success')
+        setPhoneNumber('')
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   const footerSections = {
     'Services': [
       'Quick Commerce Development',
@@ -135,7 +177,18 @@ const Footer = () => {
             <h3 className="text-2xl font-bold mb-4">
               Let's Grow Your Business - You Lead, We Manage
             </h3>
-            <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-4">
+            {submitStatus === 'success' && (
+              <div className="mb-4 p-3 bg-green-500/20 border border-green-500/30 rounded-lg text-green-200 text-sm max-w-md mx-auto">
+                Thank you! We'll contact you soon.
+              </div>
+            )}
+            {submitStatus === 'error' && (
+              <div className="mb-4 p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-200 text-sm max-w-md mx-auto">
+                Sorry, there was an error. Please try again.
+              </div>
+            )}
+            <form onSubmit={handlePhoneSubmit} className="flex flex-col sm:flex-row max-w-md mx-auto gap-4">
+              <input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY} />
               <div className="flex-1 flex">
                 <div className="flex items-center px-3 py-3 bg-white rounded-l-lg">
                   <span className="text-gray-600 font-medium">+91</span>
@@ -143,13 +196,20 @@ const Footer = () => {
                 <input
                   type="tel"
                   placeholder="Phone Number"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
                   className="flex-1 px-4 py-3 rounded-r-lg border-0 focus:ring-2 focus:ring-blue-500 text-gray-900"
+                  required
                 />
               </div>
-              <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
-                Submit
+              <button 
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              >
+                {isSubmitting ? 'Sending...' : 'Submit'}
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>

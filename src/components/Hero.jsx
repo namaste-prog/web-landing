@@ -8,6 +8,8 @@ const Hero = () => {
     message: '',
     organization: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState('')
 
   const handleInputChange = (e) => {
     setFormData({
@@ -16,10 +18,43 @@ const Hero = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
+    setIsSubmitting(true)
+    setSubmitStatus('')
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          organization: formData.organization,
+          message: formData.message,
+          subject: 'New Contact Form Submission - Hero Section'
+        })
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        setSubmitStatus('success')
+        setFormData({ name: '', email: '', phone: '', message: '', organization: '' })
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -94,7 +129,18 @@ const Hero = () => {
           {/* Right Form */}
           <div className="lg:col-span-5 mt-8 lg:mt-0">
             <div className="bg-gradient-to-br from-gray-900/30 via-black/20 to-gray-800/30 backdrop-blur-xl border border-white/30 rounded-2xl shadow-2xl p-6 card-shadow animate-float hover:shadow-3xl transition-all duration-500">
+              {submitStatus === 'success' && (
+                <div className="mb-4 p-3 bg-green-500/20 border border-green-500/30 rounded-lg text-green-300 text-sm">
+                  Thank you! Your message has been sent successfully.
+                </div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="mb-4 p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-300 text-sm">
+                  Sorry, there was an error sending your message. Please try again.
+                </div>
+              )}
               <form onSubmit={handleSubmit} className="space-y-4">
+                <input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY} />
                 {/* Name Field */}
                 <div>
                   <label className="block text-white text-sm font-medium mb-2">Name</label>
@@ -152,13 +198,16 @@ const Hero = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-gray-700/80 via-gray-800/80 to-gray-900/80 hover:from-gray-600/90 hover:via-gray-700/90 hover:to-gray-800/90 text-white font-bold py-5 px-8 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl shadow-lg border border-gray-600/30 backdrop-blur-md relative overflow-hidden group"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-gray-700/80 via-gray-800/80 to-gray-900/80 hover:from-gray-600/90 hover:via-gray-700/90 hover:to-gray-800/90 text-white font-bold py-5 px-8 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl shadow-lg border border-gray-600/30 backdrop-blur-md relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
                   <span className="relative z-10 flex items-center justify-center">
-                    Talk to Us
-                    <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+                    {isSubmitting ? 'Sending...' : 'Talk to Us'}
+                    {!isSubmitting && (
+                      <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    )}
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 via-orange-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>

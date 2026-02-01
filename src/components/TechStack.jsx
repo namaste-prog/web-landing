@@ -5,20 +5,20 @@ const TechStack = () => {
 
   const techCategories = {
     'Programming Language': [
-      { name: 'JavaScript', icon: '🟨' },
+      { name: 'JavaScript', icon: '�' },
       { name: 'Python', icon: '🐍' },
       { name: 'Java', icon: '☕' },
-      { name: 'Swift', icon: '🍎' },
-      { name: 'Kotlin', icon: '📱' },
-      { name: 'TypeScript', icon: '📘' }
+      { name: 'Swift', icon: '🦉' },
+      { name: 'Kotlin', icon: '🎯' },
+      { name: 'TypeScript', icon: '💙' }
     ],
     'Frameworks': [
       { name: 'React', icon: '⚛️' },
       { name: 'React Native', icon: '📱' },
-      { name: 'Flutter', icon: '💙' },
-      { name: 'Node.js', icon: '🟢' },
-      { name: 'Django', icon: '🎸' },
-      { name: 'Spring Boot', icon: '🍃' }
+      { name: 'Flutter', icon: '🐦' },
+      { name: 'Node.js', icon: '💚' },
+      { name: 'Django', icon: '🎯' },
+      { name: 'Spring Boot', icon: '🌱' }
     ],
     'Analytics Tools': [
       { name: 'Google Analytics', icon: '📊' },
@@ -34,21 +34,21 @@ const TechStack = () => {
       { name: 'MySQL', icon: '🐬' },
       { name: 'Redis', icon: '🔴' },
       { name: 'Firebase', icon: '🔥' },
-      { name: 'DynamoDB', icon: '⚡' }
+      { name: 'DynamoDB', icon: '🚀' }
     ],
     'Cloud Platforms': [
       { name: 'AWS', icon: '☁️' },
-      { name: 'Google Cloud', icon: '☁️' },
-      { name: 'Azure', icon: '☁️' },
+      { name: 'Google Cloud', icon: '🌐' },
+      { name: 'Azure', icon: '🔷' },
       { name: 'Digital Ocean', icon: '🌊' },
       { name: 'Heroku', icon: '💜' },
-      { name: 'Vercel', icon: '▲' }
+      { name: 'Vercel', icon: '🔺' }
     ],
     'CRM Software': [
-      { name: 'Salesforce', icon: '☁️' },
+      { name: 'Salesforce', icon: '🏢' },
       { name: 'HubSpot', icon: '🧡' },
-      { name: 'Zoho', icon: '📋' },
-      { name: 'Pipedrive', icon: '🚰' },
+      { name: 'Zoho', icon: '📊' },
+      { name: 'Pipedrive', icon: '📈' },
       { name: 'Freshworks', icon: '🌿' },
       { name: 'Monday.com', icon: '📅' }
     ]
