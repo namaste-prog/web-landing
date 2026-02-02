@@ -139,13 +139,13 @@ const Hero = () => {
             </p>
 
             {/* CTA Card */}
-            <div className="mb-4">
-              <p className="text-white font-semibold text-sm sm:text-base md:text-base leading-relaxed mb-3 sm:mb-4">
+            <div className="mb-4 max-w-full sm:max-w-2xl lg:max-w-2xl">
+              <p className="text-white font-semibold text-sm sm:text-base md:text-base leading-relaxed mb-3 sm:mb-4 bg-gradient-to-r from-red-500/20 via-orange-500/20 to-transparent px-4 py-3 rounded-lg border border-red-500/30">
                 Don't wait months for results. Deploy your website in 7 days—let's start today
               </p>
               <button 
                 onClick={() => setShowModal(true)}
-                className="bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:from-red-600 hover:via-red-700 hover:to-red-800 text-white font-bold py-2 px-6 sm:px-8 md:py-3 md:px-10 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95 text-sm sm:text-base whitespace-nowrap shadow-lg">
+                className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 hover:border-white/50 text-white font-bold py-2 px-6 sm:px-8 md:py-3 md:px-10 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95 text-sm sm:text-base whitespace-nowrap shadow-lg">
                 Let's talk
               </button>
             </div>
