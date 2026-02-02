@@ -130,8 +130,8 @@ const Hero = () => {
           <div className="lg:col-span-7 animate-slide-up order-1">
             <h1 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-black leading-tight sm:leading-[1.1] md:leading-[0.95] mb-3 sm:mb-4 md:mb-6 tracking-tight text-center lg:text-left">
               <span className="bg-gradient-to-r from-red-400 via-red-500 to-orange-500 bg-clip-text text-transparent block mb-1 sm:mb-2">Next-Gen Technical</span>
-              <span className="bg-gradient-to-r from-red-500 via-red-600 to-red-700 bg-clip-text text-transparent block mb-1 sm:mb-2">Solutions for</span>
-              <span className="text-white font-bold">High-Growth Enterprises</span>
+              <span className="bg-gradient-to-r from-red-400 via-red-500 to-orange-500 bg-clip-text text-transparent block mb-1 sm:mb-2">Solutions for</span>
+              <span className="bg-gradient-to-r from-red-400 via-red-500 to-orange-500 bg-clip-text text-transparent block">High-Growth Enterprises</span>
             </h1>
 
             <p className="text-gray-300 text-lg leading-relaxed mb-4 sm:mb-5 md:mb-6 font-medium max-w-full sm:max-w-2xl lg:max-w-2xl text-justify">
@@ -139,8 +139,8 @@ const Hero = () => {
             </p>
 
             {/* CTA Card */}
-            <div className="mb-4 max-w-full sm:max-w-2xl lg:max-w-2xl">
-              <p className="text-white font-semibold text-sm sm:text-base md:text-base leading-relaxed mb-3 sm:mb-4 bg-gradient-to-r from-red-500/20 via-orange-500/20 to-transparent px-4 py-3 rounded-lg border border-red-500/30">
+            <div className="mb-4 max-w-full sm:max-w-2xl lg:max-w-2xl flex flex-col items-center lg:items-start">
+              <p className="text-white font-semibold text-sm sm:text-base md:text-base leading-relaxed mb-3 sm:mb-4 bg-gradient-to-r from-red-500/20 via-orange-500/20 to-transparent px-4 py-3 rounded-lg border border-red-500/30 w-full">
                 Don't wait months for results. Deploy your website in 7 days—let's start today
               </p>
               <button 
@@ -169,63 +169,63 @@ const Hero = () => {
                 <input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY} />
                 {/* Name Field */}
                 <div>
-                  <label className="block text-white text-xs sm:text-xs font-medium mb-1">Name</label>
+                  <label className="block text-white text-sm font-medium mb-1">Name</label>
                   <input
                     type="text"
                     name="name"
                     placeholder="Your Name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 sm:py-2.5 bg-gray-800/50 border border-gray-600/30 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all text-white placeholder-gray-400 backdrop-blur-sm text-xs sm:text-sm"
+                    className="w-full px-3 py-2 sm:py-2.5 bg-gray-800/50 border border-gray-600/30 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all text-white placeholder-gray-400 backdrop-blur-sm text-sm"
                     required
                   />
                 </div>
 
                 {/* Email Field */}
                 <div>
-                  <label className="block text-white text-xs sm:text-xs font-medium mb-1">Email address</label>
+                  <label className="block text-white text-sm font-medium mb-1">Email address</label>
                   <input
                     type="email"
                     name="email"
                     placeholder="zora@example.com"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 sm:py-2.5 bg-gray-800/50 border border-gray-600/30 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all text-white placeholder-gray-400 backdrop-blur-sm text-xs sm:text-sm"
+                    className="w-full px-3 py-2 sm:py-2.5 bg-gray-800/50 border border-gray-600/30 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all text-white placeholder-gray-400 backdrop-blur-sm text-sm"
                     required
                   />
                 </div>
 
                 {/* Phone Field */}
                 <div>
-                  <label className="block text-white text-xs sm:text-xs font-medium mb-1">Phone Number</label>
+                  <label className="block text-white text-sm font-medium mb-1">Phone Number</label>
                   <input
                     type="tel"
                     name="phone"
                     placeholder="+91 XXXXXXXXXX"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 sm:py-2.5 bg-gray-800/50 border border-gray-600/30 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all text-white placeholder-gray-400 backdrop-blur-sm text-xs sm:text-sm"
+                    className="w-full px-3 py-2 sm:py-2.5 bg-gray-800/50 border border-gray-600/30 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all text-white placeholder-gray-400 backdrop-blur-sm text-sm"
                     required
                   />
                 </div>
 
                 {/* Industry Field */}
                 <div>
-                  <label className="block text-white text-xs sm:text-xs font-medium mb-1">Tell Us Your Industry</label>
+                  <label className="block text-white text-sm font-medium mb-1">Tell Us Your Industry</label>
                   <input
                     type="text"
                     name="organization"
                     placeholder="Business Industry"
                     value={formData.organization || ''}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 sm:py-2.5 bg-gray-800/50 border border-gray-600/30 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all text-white placeholder-gray-400 backdrop-blur-sm text-xs sm:text-sm"
+                    className="w-full px-3 py-2 sm:py-2.5 bg-gray-800/50 border border-gray-600/30 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all text-white placeholder-gray-400 backdrop-blur-sm text-sm"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:from-red-600 hover:via-red-700 hover:to-red-800 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl shadow-lg relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-xs sm:text-sm active:scale-95"
+                  className="w-full bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:from-red-600 hover:via-red-700 hover:to-red-800 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl shadow-lg relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-sm active:scale-95"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-1 sm:gap-2">
                     {isSubmitting ? 'Sending...' : 'Talk to Us'}
