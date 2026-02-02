@@ -91,6 +91,24 @@ const OurServices = () => {
       ),
       title: "Digital Marketing",
       description: "We create powerful digital marketing strategies that boost your online presence, increase engagement, and drive measurable business results."
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      ),
+      title: "Generative AI",
+      description: "Leverage advanced generative AI models to automate content creation, enhance decision-making, and unlock new business opportunities with cutting-edge technology."
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+        </svg>
+      ),
+      title: "Agentic AI",
+      description: "Deploy intelligent autonomous agents that learn, adapt, and take actions independently to streamline workflows and maximize operational efficiency."
     }
   ]
 
