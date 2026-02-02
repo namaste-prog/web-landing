@@ -117,21 +117,12 @@ const Hero = () => {
   }
 
   return (
-    <section className="min-h-screen md:h-screen text-white overflow-hidden relative flex items-center pt-16 md:pt-0 pb-8 md:pb-0">
-      {/* Video Background */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover"
-        autoPlay
-        loop
-        muted
-        playsInline
-      >
-        <source src="/video/video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      {/* Background Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/70 via-black/60 to-gray-800/80"></div>
+    <section className="min-h-screen md:h-screen text-white overflow-hidden relative flex items-center pt-16 md:pt-0 pb-0" style={{background: 'linear-gradient(135deg, #000000 0%, #1f2937 50%, #000000 100%)'}}>
+      {/* Background Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-red-500/10 rounded-full blur-3xl opacity-40 animate-pulse" style={{animationDuration: '4s'}}></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-red-600/15 rounded-full blur-3xl opacity-40 animate-pulse" style={{animationDuration: '4s', animationDelay: '1s'}}></div>
+      </div>
 
       <div className="w-full mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-6 items-center gap-6 sm:gap-8 md:gap-10">
@@ -143,7 +134,7 @@ const Hero = () => {
               <span className="text-white font-bold">High-Growth Enterprises</span>
             </h1>
 
-            <p className="text-xs sm:text-sm md:text-base lg:text-base text-gray-100 mb-4 sm:mb-5 md:mb-6 leading-relaxed sm:leading-relaxed font-medium max-w-full sm:max-w-xl lg:max-w-lg">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-4 sm:mb-5 md:mb-6 leading-relaxed sm:leading-relaxed font-medium max-w-full sm:max-w-2xl lg:max-w-2xl text-justify">
               Architecting future-proof digital infrastructure with a focus on speed, security, and scale. Zora Devs bridges the gap between complex business challenges and elegant technical execution—delivering custom software that doesn't just work, but leads.
             </p>
 
@@ -154,7 +145,7 @@ const Hero = () => {
               </p>
               <button 
                 onClick={() => setShowModal(true)}
-                className="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl border border-white/30 text-white font-bold py-2 px-6 sm:px-8 md:py-3 md:px-10 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:from-white/30 hover:to-white/20 hover:border-white/50 active:scale-95 text-sm sm:text-base whitespace-nowrap">
+                className="bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:from-red-600 hover:via-red-700 hover:to-red-800 text-white font-bold py-2 px-6 sm:px-8 md:py-3 md:px-10 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95 text-sm sm:text-base whitespace-nowrap shadow-lg">
                 Let's talk
               </button>
             </div>
@@ -163,7 +154,7 @@ const Hero = () => {
 
           {/* Right Form */}
           <div className="lg:col-span-5 order-2 w-full">
-            <div className="relative z-20 bg-gradient-to-br from-gray-900/40 via-black/30 to-gray-800/40 backdrop-blur-xl border border-white/30 rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-5 md:p-6 w-full max-w-full sm:max-w-sm mx-auto lg:mx-0 animate-float hover:shadow-3xl transition-all duration-500">
+            <div className="relative z-20 bg-gray-900/40 backdrop-blur-xl border border-white/30 rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-5 md:p-6 w-full max-w-full sm:max-w-sm mx-auto lg:mx-0 animate-float hover:shadow-3xl transition-all duration-500">
               {submitStatus === 'success' && (
                 <div className="mb-3 sm:mb-4 p-2 sm:p-3 bg-green-500/20 border border-green-500/30 rounded-lg text-green-300 text-xs sm:text-sm">
                   Thank you! Your message has been sent successfully.
@@ -234,7 +225,7 @@ const Hero = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-gray-700/80 via-gray-800/80 to-gray-900/80 hover:from-gray-600/90 hover:via-gray-700/90 hover:to-gray-800/90 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl shadow-lg border border-gray-600/30 backdrop-blur-md relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-xs sm:text-sm active:scale-95"
+                  className="w-full bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:from-red-600 hover:via-red-700 hover:to-red-800 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl shadow-lg relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-xs sm:text-sm active:scale-95"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-1 sm:gap-2">
                     {isSubmitting ? 'Sending...' : 'Talk to Us'}
@@ -244,7 +235,7 @@ const Hero = () => {
                       </svg>
                     )}
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 via-orange-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-red-400/20 via-red-500/20 to-red-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </form>
             </div>
@@ -254,8 +245,8 @@ const Hero = () => {
 
       {/* Let's Talk Modal Form */}
       {showModal && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-3 sm:p-4">
-          <div className="bg-gradient-to-br from-gray-900/40 via-black/30 to-gray-800/40 backdrop-blur-xl border border-white/30 rounded-xl sm:rounded-2xl shadow-2xl p-5 sm:p-6 md:p-8 w-full max-w-full sm:max-w-md max-h-[90vh] overflow-y-auto relative">
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-3 sm:p-4">
+          <div className="bg-gray-900/80 backdrop-blur-xl border border-white/30 rounded-xl sm:rounded-2xl shadow-2xl p-5 sm:p-6 md:p-8 w-full max-w-full sm:max-w-md max-h-[90vh] overflow-y-auto relative">
             {/* Close Button */}
             <button
               onClick={() => setShowModal(false)}
