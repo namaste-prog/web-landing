@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import './Statistics.css'
 
 const Statistics = () => {
   const [isVisible, setIsVisible] = useState(false)

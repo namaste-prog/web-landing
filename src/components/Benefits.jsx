@@ -1,3 +1,5 @@
+import './Benefits.css'
+
 const Benefits = () => {
   const benefits = [
     {

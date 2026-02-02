@@ -1,3 +1,5 @@
+import './CaseStudies.css'
+
 const CaseStudies = () => {
   const caseStudies = [
     {

@@ -1,3 +1,5 @@
+import './OurServices.css'
+
 const OurServices = () => {
   const services = [
     {
@@ -15,7 +17,7 @@ const OurServices = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
         </svg>
       ),
-      title: "Website Development", 
+      title: "Website Development",
       description: "We create fast, responsive, and SEO-friendly websites that reflect your brand and drive results."
     },
     {
@@ -97,7 +99,7 @@ const OurServices = () => {
       {/* Red Blob Effects */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-red-600/15 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-10 left-20 w-64 h-64 bg-red-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">

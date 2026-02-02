@@ -1,3 +1,5 @@
+import './ClientLogos.css'
+
 const ClientLogos = () => {
   const clients = [
     { name: "Motherson", logo: "🏢" },

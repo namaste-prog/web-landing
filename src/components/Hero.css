@@ -1,0 +1,494 @@
+/* Hero Component Styles */
+.hero {
+  min-height: 100vh;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 4rem;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    height: 100vh;
+    padding-top: 0;
+  }
+}
+
+/* Mobile First - Extra small devices (320px and up) */
+@media (max-width: 479px) {
+  .hero {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    min-height: 100vh;
+  }
+}
+
+/* Small devices (480px and up) */
+@media (min-width: 480px) and (max-width: 639px) {
+  .hero {
+    padding-top: 3.5rem;
+  }
+}
+
+/* Medium devices (640px and up) */
+@media (min-width: 640px) and (max-width: 767px) {
+  .hero {
+    padding-top: 4rem;
+  }
+}
+
+/* Large devices (768px and up) */
+@media (min-width: 768px) {
+  .hero {
+    padding-top: 0;
+    height: 100vh;
+  }
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, 
+    rgba(55, 65, 81, 0.7) 0%, 
+    rgba(0, 0, 0, 0.6) 50%, 
+    rgba(55, 65, 81, 0.8) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.hero-title {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 900;
+  line-height: 0.95;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.025em;
+}
+
+.hero-title-gradient {
+  background: linear-gradient(135deg, #fca5a5, #ef4444, #fb923c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.hero-description {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: rgba(229, 231, 235, 0.9);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-form {
+  background: linear-gradient(135deg, 
+    rgba(55, 65, 81, 0.3) 0%, 
+    rgba(0, 0, 0, 0.2) 50%, 
+    rgba(55, 65, 81, 0.3) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 1.5rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-form:hover {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.35);
+  transition: box-shadow 0.5s ease;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-stat-item {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.15) 0%, 
+    rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.hero-stat-item:hover {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.2) 0%, 
+    rgba(255, 255, 255, 0.1) 100%);
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.hero-form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(55, 65, 81, 0.5);
+  border: 1px solid rgba(107, 114, 128, 0.3);
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.hero-form-input:focus {
+  outline: none;
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.hero-form-input::placeholder {
+  color: rgba(156, 163, 175, 0.8);
+}
+
+.hero-form-button {
+  width: 100%;
+  background: linear-gradient(135deg, 
+    rgba(55, 65, 81, 0.8) 0%, 
+    rgba(31, 41, 55, 0.8) 50%, 
+    rgba(17, 24, 39, 0.8) 100%);
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(107, 114, 128, 0.3);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-form-button:hover {
+  background: linear-gradient(135deg, 
+    rgba(75, 85, 99, 0.9) 0%, 
+    rgba(55, 65, 81, 0.9) 50%, 
+    rgba(31, 41, 55, 0.9) 100%);
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.hero-form-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, 
+    rgba(239, 68, 68, 0.1) 0%, 
+    rgba(251, 146, 60, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-form-button:hover::before {
+  opacity: 1;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation classes for Tailwind */
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Enhanced Mobile optimizations */
+/* Extra small devices (phones, 320px and up) */
+@media (max-width: 479px) {
+  .hero {
+    padding: 2rem 0;
+    min-height: 100vh;
+  }
+  
+  .hero-container {
+    padding: 0 0.75rem;
+  }
+  
+  .hero-content {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: 1.75rem;
+    line-height: 1.1;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-form {
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .hero-form-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .hero-form-input {
+    padding: 0.75rem;
+    font-size: 14px;
+  }
+  
+  .hero-form-button {
+    padding: 0.75rem 1rem;
+    font-size: 14px;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .hero-stat-item {
+    justify-content: center;
+    text-align: center;
+    padding: 0.75rem;
+  }
+  
+  .hero-stat-number {
+    font-size: 1.25rem;
+  }
+  
+  .hero-stat-label {
+    font-size: 0.75rem;
+  }
+}
+
+/* Small devices (landscape phones, 480px and up) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .hero {
+    padding: 3rem 0;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-form {
+    max-width: 500px;
+    margin: 2rem auto 0;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero {
+    padding: 4rem 0;
+  }
+  
+  .hero-container {
+    max-width: 1024px;
+    padding: 0 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-form {
+    max-width: 500px;
+    margin: 2rem auto 0;
+  }
+  
+  .hero-form-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .hero-form-button {
+    grid-column: span 2;
+  }
+  
+  .hero-stats {
+    justify-content: space-around;
+    gap: 1.5rem;
+  }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .hero {
+    padding: 5rem 0;
+  }
+  
+  .hero-container {
+    max-width: 1200px;
+    padding: 0 2rem;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-form {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    padding: 2rem;
+  }
+  
+  .hero-form-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .hero-form-button {
+    grid-column: span 3;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1440px and up) */
+@media (min-width: 1440px) {
+  .hero-container {
+    max-width: 1400px;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-form {
+    max-width: 700px;
+    padding: 2.5rem;
+  }
+  
+  .hero-stats {
+    gap: 3rem;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero {
+    padding: 2rem 0;
+    min-height: auto;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-subtitle {
+    margin-bottom: 1rem;
+  }
+  
+  .hero-form {
+    margin-top: 1rem;
+  }
+  
+  .hero-stats {
+    margin-top: 1rem;
+  }
+}
+
+/* Additional mobile fixes for form positioning */
+@media (max-width: 1023px) {
+  .hero {
+    padding-top: 6rem !important;
+  }
+  
+  .hero-form {
+    margin-top: 2rem;
+    position: relative;
+    z-index: 10;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Ensure proper spacing for touch devices */
+@media (pointer: coarse) {
+  .hero-form input,
+  .hero-form button {
+    min-height: 48px;
+    font-size: 16px;
+  }
+}
+
+/* Fix for very small screens */
+@media (max-width: 380px) {
+  .hero {
+    padding-top: 5rem !important;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .hero-form {
+    padding: 1rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Compact layout for fitting on single screen */
+@media (min-width: 1024px) {
+  .hero {
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .hero h1 {
+    font-size: 2.25rem !important;
+    line-height: 1 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .hero p {
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .hero-form {
+    padding: 1.25rem !important;
+    max-width: 320px !important;
+  }
+}

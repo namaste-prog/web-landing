@@ -1,0 +1,166 @@
+/* ClientLogos Component Styles */
+.clientlogos {
+  padding: 4rem 0;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.clientlogos-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.clientlogos-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.clientlogos-title {
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.clientlogos-description {
+  color: #6b7280;
+  font-size: 1.125rem;
+  max-width: 32rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.clientlogos-scroll-container {
+  position: relative;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.clientlogos-scroll-wrapper {
+  display: flex;
+  animation: scroll 40s linear infinite;
+}
+
+.clientlogos-scroll-wrapper:hover {
+  animation-play-state: paused;
+}
+
+.clientlogos-logo-item {
+  flex: none;
+  width: 140px;
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 1rem;
+  border: 1px solid #f3f4f6;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.clientlogos-logo-item:hover {
+  background: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.clientlogos-logo-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.clientlogos-logo-item:hover .clientlogos-logo-icon {
+  transform: scale(1.1);
+}
+
+.clientlogos-logo-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #374151;
+  text-align: center;
+}
+
+.clientlogos-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.clientlogos-stat {
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  border-radius: 1rem;
+  border: 1px solid #f3f4f6;
+  transition: all 0.3s ease;
+}
+
+.clientlogos-stat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+.clientlogos-stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ef4444;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.clientlogos-stat-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Animation keyframes */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-140px * 20 - 32px * 20));
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .clientlogos {
+    padding: 3rem 0;
+  }
+  
+  .clientlogos-logo-item {
+    width: 120px;
+    padding: 1rem;
+    margin-right: 1.5rem;
+  }
+  
+  .clientlogos-logo-icon {
+    font-size: 2rem;
+  }
+  
+  .clientlogos-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .clientlogos-stat {
+    padding: 1rem;
+  }
+  
+  .clientlogos-stat-number {
+    font-size: 1.5rem;
+  }
+}

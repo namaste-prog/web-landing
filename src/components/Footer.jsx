@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './Footer.css'
 
 const Footer = () => {
   const [phoneNumber, setPhoneNumber] = useState('')

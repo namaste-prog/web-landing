@@ -1,3 +1,5 @@
+import './Process.css'
+
 const Process = () => {
   const steps = [
     {

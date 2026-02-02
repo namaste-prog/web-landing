@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './TechStack.css'
 
 const TechStack = () => {
   const [activeCategory, setActiveCategory] = useState('Programming Language')
