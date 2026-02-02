@@ -6,6 +6,7 @@ import Hero from './components/Hero'
 import OurServices from './components/OurServices'
 import WhyChooseUs from './components/WhyChooseUs'
 import OurWork, { TechnologySlider } from './components/OurWork'
+import Testimonials from './components/Testimonials'
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
       <Hero />
       <WhyChooseUs />
       <OurServices />
-      <OurWork />
       <TechnologySlider />
+      <OurWork />
+      <Testimonials />
     </div>
   )
 }

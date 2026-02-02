@@ -1,0 +1,52 @@
+/* Testimonials Component Styles */
+.testimonials {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #000000 0%, #1f2937 50%, #000000 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.testimonials-bg-circle-1 {
+  position: absolute;
+  top: 5rem;
+  right: 2.5rem;
+  width: 24rem;
+  height: 24rem;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.testimonials-bg-circle-2 {
+  position: absolute;
+  bottom: 5rem;
+  left: 5rem;
+  width: 20rem;
+  height: 20rem;
+  background: rgba(220, 38, 38, 0.15);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: pulse 4s ease-in-out infinite;
+  animation-delay: 1000ms;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}

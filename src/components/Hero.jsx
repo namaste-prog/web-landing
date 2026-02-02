@@ -128,13 +128,13 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-6 items-center gap-6 sm:gap-8 md:gap-10">
           {/* Left Content */}
           <div className="lg:col-span-7 animate-slide-up order-1">
-            <h1 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-black leading-tight sm:leading-[1.1] md:leading-[0.95] mb-3 sm:mb-4 md:mb-6 tracking-tight">
+            <h1 className="text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-black leading-tight sm:leading-[1.1] md:leading-[0.95] mb-3 sm:mb-4 md:mb-6 tracking-tight text-center lg:text-left">
               <span className="bg-gradient-to-r from-red-400 via-red-500 to-orange-500 bg-clip-text text-transparent block mb-1 sm:mb-2">Next-Gen Technical</span>
               <span className="bg-gradient-to-r from-red-500 via-red-600 to-red-700 bg-clip-text text-transparent block mb-1 sm:mb-2">Solutions for</span>
               <span className="text-white font-bold">High-Growth Enterprises</span>
             </h1>
 
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-4 sm:mb-5 md:mb-6 leading-relaxed sm:leading-relaxed font-medium max-w-full sm:max-w-2xl lg:max-w-2xl text-justify">
+            <p className="text-gray-300 text-lg leading-relaxed mb-4 sm:mb-5 md:mb-6 font-medium max-w-full sm:max-w-2xl lg:max-w-2xl text-justify">
               Architecting future-proof digital infrastructure with a focus on speed, security, and scale. Zora Devs bridges the gap between complex business challenges and elegant technical execution—delivering custom software that doesn't just work, but leads.
             </p>
 
@@ -146,7 +146,7 @@ const Hero = () => {
               <button 
                 onClick={() => setShowModal(true)}
                 className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 hover:border-white/50 text-white font-bold py-2 px-6 sm:px-8 md:py-3 md:px-10 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95 text-sm sm:text-base whitespace-nowrap shadow-lg">
-                Let's talk
+                Book your free consultation call
               </button>
             </div>
 

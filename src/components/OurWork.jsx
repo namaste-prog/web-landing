@@ -188,36 +188,22 @@ const OurWork = () => {
 
                       {/* Right Content - Project Image */}
                       <div className="relative">
-                        <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl p-4 shadow-2xl">
-                          {/* Browser Mock */}
-                          <div className="bg-gray-600 rounded-t-lg p-2 flex items-center gap-2">
-                            <div className="flex gap-1">
-                              <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                              <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                              <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                            </div>
-                            <div className="flex-1 bg-gray-500 rounded px-3 py-1 text-xs text-gray-300 text-center">
-                              {project.url || "www.example-project.com"}
-                            </div>
-                          </div>
-
-                          {/* Project Screenshot */}
-                          <div className="h-64 lg:h-80 rounded-b-lg overflow-hidden bg-gray-200 flex items-center justify-center">
-                            {project.image ? (
-                              <img
-                                src={project.image}
-                                alt={project.title}
-                                className="w-full h-full object-cover"
-                              />
-                            ) : (
-                              <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 w-full h-full flex items-center justify-center">
-                                <div className="text-center text-white">
-                                  <div className="text-4xl font-bold mb-2">{project.title.split(' ')[0]}</div>
-                                  <div className="text-sm opacity-80">Project Screenshot</div>
-                                </div>
+                        {/* Project Screenshot */}
+                        <div className="rounded-xl overflow-hidden shadow-2xl">
+                          {project.image ? (
+                            <img
+                              src={project.image}
+                              alt={project.title}
+                              className="w-full h-64 lg:h-80 object-cover"
+                            />
+                          ) : (
+                            <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 w-full h-64 lg:h-80 flex items-center justify-center">
+                              <div className="text-center text-white">
+                                <div className="text-4xl font-bold mb-2">{project.title.split(' ')[0]}</div>
+                                <div className="text-sm opacity-80">Project Screenshot</div>
                               </div>
-                            )}
-                          </div>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -230,7 +216,7 @@ const OurWork = () => {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-full p-3 transition-all duration-300 group"
+            className="absolute -left-4 lg:-left-16 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-full p-3 transition-all duration-300 group z-10 hidden md:flex"
           >
             <svg className="w-6 h-6 text-white group-hover:text-red-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -239,7 +225,7 @@ const OurWork = () => {
 
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-full p-3 transition-all duration-300 group"
+            className="absolute -right-4 lg:-right-16 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-full p-3 transition-all duration-300 group z-10 hidden md:flex"
           >
             <svg className="w-6 h-6 text-white group-hover:text-red-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
