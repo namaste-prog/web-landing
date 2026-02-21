@@ -95,7 +95,40 @@ const OurWork = () => {
       url: "https://www.amrealtysolutions.com/",
       tech: ["Angular", "Python", "PostgreSQL", "Docker"],
       category: "Real estate"
-    }
+    },
+    {
+      title: "ZynvoCare",
+      description: "A specialized health-fintech ecosystem that automates patient billing and complex insurance reconciliations using AI. It features a 'Smart-Claim' engine that predicts denial risks before submission and provides integrated micro-financing options for elective medical procedures.",
+      image: "/img/ZynvoCare.png",
+      url: "https://zynvocare-demo.zoradevs.com/",
+      tech: ["Node.js", "Python", "PostgreSQL", "AWS"],
+      category: "Healthcare"
+    },
+    {
+      title: "Glissade Shop",
+      description: "An advanced e-commerce engine driven by autonomous 'Agentic Shopping' assistants. The platform enables predictive inventory restocking, real-time AR-based spatial product fitting, and an AI negotiation layer that secures volume-based discounts for B2B procurement.",
+      image: "/img/Glissade_Shop.png",
+      url: "https://glissade-demo.zoradevs.com/",
+      tech: ["React", "Next.js", "Shopify API", "TensorFlow"],
+      category: "E-Commerce"
+    },
+    {
+      title: "Nexaloom LMS",
+      description: "An intelligent workforce development platform that utilizes an Adaptive Learning Engine to bridge corporate skill gaps. It auto-curates personalized training modules based on employee performance data and features AI-automated proctoring for global certification standards.",
+      image: "/img/Nexaloom LMS.png",
+      url: "https://nexaloom-demo.zoradevs.com/",
+      tech: ["Vue.js", "Laravel", "MySQL", "OpenAI API"],
+      category: "Education"
+    },
+    {
+      title: "Vexara AI",
+      description: "A high-performance Agentic AI orchestration tool designed for large-scale customer operations. Vexara features 'Cross-Session Memory' and autonomous execution capabilities, allowing it to resolve technical tickets and sync CRM data across platforms without human intervention.",
+      image: "/img/Vexara_ai.png",
+      url: "https://vexara-demo.zoradevs.com/",
+      tech: ["TypeScript", "FastAPI", "MongoDB", "Docker"],
+      category: "AI & SaaS"
+    },
+
   ]
 
   useEffect(() => {
